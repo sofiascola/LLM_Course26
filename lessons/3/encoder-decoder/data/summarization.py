@@ -13,7 +13,12 @@ def load_and_tokenize():
     task_cfg = get_task_config()
     tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
-    dataset = load_dataset(task_cfg["name"], task_cfg["config"])
+    # dataset = load_dataset(task_cfg["name"], task_cfg["config"])
+
+    if task_cfg["config"] is not None:
+        dataset = load_dataset(task_cfg["name"], task_cfg["config"])
+    else:
+        dataset = load_dataset(task_cfg["name"])
     print(f"train: {len(dataset['train'])} — validation: {len(dataset['validation'])}")
 
     def tokenize_function(examples):

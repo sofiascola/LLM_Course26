@@ -14,6 +14,7 @@ def load_and_tokenize():
     tokenizer = AutoTokenizer.from_pretrained(MODEL)
 
     dataset = load_dataset(task_cfg["name"], task_cfg["config"])
+    
 
     # opus_books non ha validation split, lo creiamo dividendo il train
     # prima divisione: 80% train, 20% temp

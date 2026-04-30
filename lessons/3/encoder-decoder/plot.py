@@ -2,7 +2,7 @@
 import os
 import json
 import matplotlib.pyplot as plt
-from config import MODEL_NAME, TASK
+from config import MODEL, TASK
 
 
 def find_latest_checkpoint(base_dir: str = "checkpoints"):
@@ -66,7 +66,7 @@ def plot_training():
     if has_bertscore: n_plots += 1
 
     fig, axes = plt.subplots(1, n_plots, figsize=(5 * n_plots, 4))
-    fig.suptitle(f"{MODEL_NAME} — {TASK}", fontsize=13)
+    fig.suptitle(f"{MODEL} — {TASK}", fontsize=13)
 
     # -- training loss per step ────────────────────────────────────────
     axes[0].plot(train_steps, train_loss, color="steelblue", linewidth=1)

@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 # ── task ──────────────────────────────────────────────────────────
-TASK = "summarization"
+TASK = "translation"
 # cambia questo per passare da un task all'altro:
 #   "summarization": riassunto di articoli (cnn_dailymail)
 #   "translation": traduzione inglese→italiano (opus_books)
@@ -18,15 +18,25 @@ MODEL = "t5-small"
 
 # ── dataset per task ──────────────────────────────────────────────
 DATASET_CONFIG = {
+    # "summarization": {
+    #     "name":         "cnn_dailymail",
+    #     "config":       "3.0.0",
+    #     "input_col":    "article",
+    #     "target_col":   "highlights",
+    #     "prefix":       "summarize: ",
+    #     # T5 usa un prefisso testuale per capire il task 
+    #     # "summarize: " dice al modello cosa deve fare
+    # },
+
     "summarization": {
-        "name":         "cnn_dailymail",
-        "config":       "3.0.0",
-        "input_col":    "article",
-        "target_col":   "highlights",
-        "prefix":       "summarize: ",
-        # T5 usa un prefisso testuale per capire il task 
-        # "summarize: " dice al modello cosa deve fare
+        "name":       "ARTeLab/ilpost",
+        "config":     None,           # nessuna sottoconfig
+        "input_col":  "source",
+        "target_col": "target",
+        "prefix":     "summarize: ",
+        "lang":       "it",
     },
+
     "translation": {
         "name":       "opus_books",
         "config":     "en-it",
