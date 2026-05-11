@@ -79,7 +79,7 @@ Risposta:"""
 # Template attivo — cambia questo per usare un template diverso
 # ------------------------------------------------------------------
 
-ACTIVE = STRICT
+ACTIVE = MULTILINGUAL
 # opzioni: STRICT, CONVERSATIONAL, CITED, STRUCTURED, MULTILINGUAL
 
 
