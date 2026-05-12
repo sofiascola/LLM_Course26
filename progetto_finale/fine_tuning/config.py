@@ -8,7 +8,7 @@ NUM_LABELS = 3               # Twitter Financial News ha 3 classi (0, 1, 2)
 
 # ── dataset ───────────────────────────────────────────────────────────
 DATASET        = "zeroshot/twitter-financial-news-sentiment"
-DATASET_CONFIG = "sentiment" # Importante per questo specifico dataset
+DATASET_CONFIG = "default" # Importante per questo specifico dataset
 TEXT_COL       = "text"
 LABEL_COL      = "label"     # La colonna nel dataset si chiama 'label'
 MAX_LENGTH     = 64          # I tweet sono brevi, 64 è ideale e veloce

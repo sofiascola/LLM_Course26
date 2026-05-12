@@ -6,7 +6,7 @@
 import os
 import sys
 from config import OUTPUT_DIR, SEED
-from data.dataset import load_data
+from data.data import load_data
 from model.model import load_model
 from training.metrics import compute_metrics
 from training.trainer import build_trainer
