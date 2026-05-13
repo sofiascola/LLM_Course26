@@ -9,10 +9,10 @@ from config import MODEL, NUM_LABELS
 from transformers import AutoModelForSequenceClassification
 
 def load_model():
-    # Carichiamo il modello pre-addestrato per la classificazione
+ 
     model = AutoModelForSequenceClassification.from_pretrained(
         MODEL,
-        num_labels=NUM_LABELS # Deve essere 3 per Twitter Financial News
+        num_labels=NUM_LABELS 
     )
 
     print(f"Modello caricato: {MODEL}")
