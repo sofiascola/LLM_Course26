@@ -2,7 +2,7 @@ import re
 import ollama
 from config import MODEL
 
-# --- IL TUO DATASET (Esattamente come lo hai scritto tu) ---
+
 TWEET_DATASET = [
     {"text": "NVIDIA revenue beats expectations, AI demand is high.", "label": "BULLISH"},
     {"text": "Tech stocks fall as interest rates remain high.", "label": "BEARISH"},
@@ -13,9 +13,9 @@ TWEET_DATASET = [
 
 N = len(TWEET_DATASET)
 
-# ------------------------------------------------------------------
+
 # STRATEGIE DI PROMPTING
-# ------------------------------------------------------------------
+
 
 def zero_shot(tweet_text):
     """Zero-shot: Solo istruzione e input."""
@@ -42,10 +42,8 @@ def few_shot(tweet_text):
     response = ollama.chat(model=MODEL, messages=[{"role": "user", "content": prompt}])
     return response["message"]["content"].strip()
 
-# ------------------------------------------------------------------
-# LOGICA DI VALUTAZIONE (Adattata ai tuoi nomi text/label)
-# ------------------------------------------------------------------
 
+# LOGICA DI VALUTAZIONE 
 def extract_answer(response: str) -> str:
     # Prende la prima riga della risposta
     return re.split(r'\n|\\n', response)[0].strip()
@@ -78,9 +76,8 @@ def evaluate(strategy_fn: callable, strategy_name: str, dataset: list, n: int):
     print(f"Accuracy {strategy_name}: {correct}/{n} = {accuracy_final:.1f}%")
     return accuracy_final
 
-# ------------------------------------------------------------------
+
 # Main
-# ------------------------------------------------------------------
 
 if __name__ == "__main__":
     print(f"Modello in uso: {MODEL}")

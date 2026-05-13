@@ -16,8 +16,8 @@ MAX_LENGTH     = 64          # I tweet sono brevi, 64 è ideale e veloce
 # ── training ──────────────────────────────────────────────────────────
 TRAIN_BATCH_SIZE = 16
 EVAL_BATCH_SIZE  = 32
-EPOCHS           = 3
-LEARNING_RATE    = 2e-5      # Valore consigliato per il fine-tuning
+EPOCHS           = 4
+LEARNING_RATE    = 5e-5      # Valore consigliato per il fine-tuning
 SAVE_STRATEGY    = "epoch"
 
 # ── campionamento per la demo ─────────────────────────────────────────
